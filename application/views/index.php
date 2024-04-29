@@ -7,7 +7,7 @@ $user_data = $this->session->all_userdata();
 require_once 'templates/header.php'; ?>
 <main>
 	<section class="container-pages">
-		<?php require_once 'page/landing.php' ?>
+		<?php require_once 'pages/landing.php' ?>
 	</section>
 </main>
 <?php require_once 'templates/footer.php'; ?>

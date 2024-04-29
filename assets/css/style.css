@@ -4,9 +4,13 @@
   --text-color: #fff;
   --main-text-color: #000;
   --main-color: rgba(255, 209, 73, 0.8);
+  --main-color-bg: rgb(255, 246, 215);
   --main-color-degrade: rgba(173, 137, 31, 0.5);
 }
 
+body {
+  background-color: var(--main-color-bg);
+}
 
 section:after {
   content: "";
@@ -15,10 +19,6 @@ section:after {
 }
 
 .container-pages,
-.home,
-.services,
-.products,
-.aboutus,
 .contactus,
 .locationSites {
   padding-block-start: 4rem;
@@ -39,14 +39,14 @@ section:after {
   color: #fff;
 }
 
-.mask-custom {
-  /* backdrop-filter: blur(8px); */
-  background-color: var(--main-color);
-}
-
 .navbar-brand {
   font-size: 1.75rem;
   letter-spacing: 3px;
+}
+
+.mask-custom {
+  background-color: #000;
+  color: var(--text-color);
 }
 
 .netButtons {
@@ -148,4 +148,49 @@ section:after {
   .content {
     padding: 25px;
   }
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #f6d365;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgb(253, 205, 133));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 205, 133, 1))
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 6rem 0 0;
+  /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
 }

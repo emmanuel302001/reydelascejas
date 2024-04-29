@@ -10,8 +10,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/images/favicon/apple-touch-icon.png') ?>">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/images/favicon/favicon-32x32.png') ?>">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/images/favicon/favicon-16x16.png') ?>">
-    <link rel="manifest" href="<?php echo base_url('recursos/favicon/site.webmanifest') ?>">
-
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -28,25 +26,29 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-0">
             <div class="container">
-                <a class="navbar-brand" href="#home"><img src="<?php echo base_url('assets/images/logo1.png') ?>" width="180px"></a>
+                <a class="navbar-brand" href="<?php echo base_url('principal') . '#home' ?>"><img src="<?php echo base_url('assets/images/logo1.png') ?>" width="180px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav-underline navbar-nav me-auto">
+                    <ul class="nav nav-underline navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#home">Inicio</a>
+                            <a class="nav-link" href="<?php echo base_url('principal') . '#home' ?>">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Servicios</a>
+                            <a class="nav-link" href="<?php echo base_url('appointment') . '#appointment' ?>">Reservar Cita</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#aboutus">Sobre Nosotros</a>
+                        <li class="nav-item me-3 me-lg-0 dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="">Académia</a></li>
+                                <li><a class="dropdown-item" href="">Micropigmentación</a></li>
+                                <li><a class="dropdown-item" href="">Otros Servicios</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#locationSites">Sedes</a>
@@ -74,31 +76,53 @@
                         <?php
                         if (!array_key_exists('login', $user_data)) { ?>
                             <li class="nav-item me-3 me-lg-0">
-                                <a class="nav-link" href="!" data-bs-toggle="modal" data-bs-target="#loginFormModal">
+                                <a class="nav-link btn" data-bs-toggle="modal" data-bs-target="#loginFormModal">
                                     <i class="fa-regular fa-user"></i>
                                 </a>
                             </li>
                         <?php } elseif (array_key_exists('login', $user_data) && !$user_data['login']) { ?>
                             <li class="nav-item me-3 me-lg-0">
-                                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <a class="nav-link btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-regular fa-user"></i>
                                 </a>
                             </li>
-                        <?php } elseif ($user_data['login']) { ?>
-                            <li class="nav-item me-3 me-lg-0 dropdown">
-                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-regular fa-user"></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url('ConfigSite')?>">Agenda</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url('ConfigSite')?>">Configurar Sitio</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
+                            <?php } elseif ($user_data['login']) {
+                            switch ($user_data['user_type']) {
+                                case 'Administrador': ?>
+                                    <li class="nav-item me-3 me-lg-0 dropdown">
+                                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-regular fa-user"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="<?php echo base_url('usuario') . '#myprofile' ?>">Mi Perfil</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo base_url('ConfigSite') ?>">Agenda</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo base_url('configsite') ?>">Configurar Sitio</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="<?php echo base_url('LoginPage/logOut') ?>">Cerrar Sesión</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a class="dropdown-item" href="<?php echo base_url('LoginPage/logOut')?>">Cerrar Sesión</a></li>
-                                </ul>
-                            </li>
+                                <?php break;
+                                case 'Usuario': ?>
+                                    <li class="nav-item me-3 me-lg-0 dropdown">
+                                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-regular fa-user"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="<?php echo base_url('usuario') ?>">Mi Perfil</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="<?php echo base_url('LoginPage/logOut') ?>">Cerrar Sesión</a></li>
+                                        </ul>
+                                    </li>
+                            <?php break;
+
+                                default:
+                                    break;
+                            } ?>
+
                         <?php } ?>
 
                     </ul>
