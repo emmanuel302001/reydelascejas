@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-text-color: #000;
+  --main-color: rgba(255, 209, 73, 0.8);
+  --main-color-degrade: rgba(173, 137, 31, 0.5);
+}
+
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container-pages,
+.home,
+.services,
+.products,
+.aboutus,
+.contactus,
+.locationSites {
+  padding-block-start: 4rem;
+  writing-mode: horizontal-tb;
+}
+
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+.mask-custom {
+  /* backdrop-filter: blur(8px); */
+  background-color: var(--main-color);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+.netButtons {
+  width: 35px;
+  height: 35px;
+  padding: 6px 0px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.42857;
+  color: #fff;
+}
+
+.wppFloatButton {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.wpp-float {
+  margin-top: 13.5px;
+  font-size: 35px;
+}
+
+.card-sites:not(:nth-child(-n+3)) {
+  display: none;
+}
+
+.btn-bd-primary {
+  background-color: var(--main-color);
+}
+
+.btn-bd-primary:hover {
+  background-color: var(--main-color-degrade);
+}
+
+
+.services-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.services-card img {
+  border-radius: 4%;
+}
+
+.services-card .fas.fa-arrow-right {
+  position: absolute;
+  bottom: -100px;
+  background-color: var(--main-color);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--main-text-color);
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.5s ease;
+}
+
+.services-card:hover .fas.fa-arrow-right {
+  bottom: 0px;
+  opacity: 1;
+}
+
+.services-container .content {
+  max-width: 300px;
+}
+
+@media (max-width:990px) {
+  .services-container .content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width:500px) {
+  body {
+    padding: 25px;
+  }
+
+  .services-card {
+    width: 100%;
+  }
+
+  .content {
+    padding: 25px;
+  }
+}
