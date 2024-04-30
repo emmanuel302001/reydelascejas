@@ -38,23 +38,23 @@
                             <a class="nav-link" href="<?php echo base_url('principal') . '#home' ?>">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url('appointment') . '#appointment' ?>">Reservar Cita</a>
+                            <a class="nav-link" href="<?php echo base_url('appointment') ?>">Reservar Cita</a>
                         </li>
                         <li class="nav-item me-3 me-lg-0 dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Servicios
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Académia</a></li>
-                                <li><a class="dropdown-item" href="">Micropigmentación</a></li>
-                                <li><a class="dropdown-item" href="">Otros Servicios</a></li>
+                                <?php for ($i = 0; $i < count($datos['getServicios']); $i++) { ?>
+                                    <li><a class="dropdown-item" href="<?php echo base_url($datos['getServicios'][$i]['page']); ?>"><?php echo $datos['getServicios'][$i]['nombre']; ?></a></li>
+                                <?php } ?>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#locationSites">Sedes</a>
+                            <a class="nav-link" href="<?php echo base_url('principal') . '#locationSites' ?>">Sedes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contactus">Contactenos</a>
+                            <a class="nav-link" href="<?php echo base_url('principal') . '#contactus' ?>">Contactenos</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex flex-row">
@@ -96,7 +96,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li><a class="dropdown-item" href="<?php echo base_url('usuario') . '#myprofile' ?>">Mi Perfil</a></li>
                                             <li><a class="dropdown-item" href="<?php echo base_url('ConfigSite') ?>">Agenda</a></li>
-                                            <li><a class="dropdown-item" href="<?php echo base_url('configsite') ?>">Configurar Sitio</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo base_url('configsite?p=dashboard') ?>">Configurar Sitio</a></li>
                                             <li>
                                                 <hr class="dropdown-divider">
                                             </li>

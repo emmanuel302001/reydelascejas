@@ -130,6 +130,10 @@ section:after {
   max-width: 300px;
 }
 
+.services-card:not(:nth-child(-n+3)) {
+  display: none;
+}
+
 @media (max-width:990px) {
   .services-container .content {
     max-width: 100%;

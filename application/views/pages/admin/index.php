@@ -12,12 +12,14 @@ require_once  dirname(__DIR__, 2) . '/templates/header.php'; ?>
             <div class="position-sticky">
                 <div class="list-group list-group-flush mx-3 mt-4">
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Banner</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Sedes</span>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-lock fa-fw me-3"></i><span>Password</span>
+                    </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple">
                         <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
@@ -41,7 +43,7 @@ require_once  dirname(__DIR__, 2) . '/templates/header.php'; ?>
     </main>
     <!--Main layout-->
     <section>
-        <?php require_once $pagina . '.php'; ?>
+        <?php require_once 'templates/' . $pagina . '.php'; ?>
     </section>
 </main>
 <?php require_once  dirname(__DIR__, 2) . '/templates/footer.php'; ?>

@@ -8,15 +8,23 @@ class Usuario extends CI_Controller
   {
     parent::__construct();
     $this->load->model('perfil_model');
+    $this->load->model('sedes_model');
+    $this->load->model('categoriaServicios_model');
   }
 
   public function index()
   {
-    $user_profile['data'] = $this->getInfoUser();
+    $reply = $this->sedes_model->findSedes();
+    $servicios = $this->categoriaServicios_model->getCategoriasServicios();
+
+    $frontData['getSedes'] = $reply;
+    $frontData['getServicios'] = $servicios;
+    $frontData['user_profile'] = $this->getInfoUser();
+    $result['datos'] = $frontData;
     if ($this->session->userdata('login')) {
-      $this->load->view('/pages/profile/index', $user_profile);
+      $this->load->view('/pages/profile/index', $result);
     } else {
-      redirect(site_url("index"));
+      redirect(site_url("principal"));
     }
   }
 

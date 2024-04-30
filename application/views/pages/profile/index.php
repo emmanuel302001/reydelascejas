@@ -32,12 +32,12 @@ require_once  dirname(__DIR__, 2) . '/templates/header.php'; ?>
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="name_profile">Nombres</label>
-                                    <input class="form-control" id="name_profile" name="name_profile" type="text" value="<?php echo $data['NOMBRES'] ?>">
+                                    <input class="form-control" id="name_profile" name="name_profile" type="text" value="<?php echo $datos['user_profile']['NOMBRES'] ?>">
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="lastname_profile">Apellidos</label>
-                                    <input class="form-control" id="lastname_profile" name="lastname_profile" type="text" value="<?php echo $data['APELLIDOS'] ?>">
+                                    <input class="form-control" id="lastname_profile" name="lastname_profile" type="text" value="<?php echo $datos['user_profile']['APELLIDOS'] ?>">
                                 </div>
                             </div>
                             <!-- Form Row        -->
@@ -45,37 +45,37 @@ require_once  dirname(__DIR__, 2) . '/templates/header.php'; ?>
                                 <!-- Form Group (organization name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="location_profile">Dirección</label>
-                                    <input class="form-control" id="location_profile" name="location_profile" type="text" value="<?php echo $data['DIRECCION'] ?>">
+                                    <input class="form-control" id="location_profile" name="location_profile" type="text" value="<?php echo $datos['user_profile']['DIRECCION'] ?>">
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="city_profile">Ciudad</label>
-                                    <input class="form-control" id="city_profile" name="city_profile" type="text" value="<?php echo $data['CIUDAD'] ?>">
+                                    <input class="form-control" id="city_profile" name="city_profile" type="text" value="<?php echo $datos['user_profile']['CIUDAD'] ?>">
                                 </div>
                             </div>
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="email_profile">Correo Electrónico</label>
-                                <input class="form-control" id="email_profile" name="email_profile" type="email" value="<?php echo $data['EMAIL'] ?>" readonly>
+                                <input class="form-control" id="email_profile" name="email_profile" type="email" value="<?php echo $datos['user_profile']['EMAIL'] ?>" readonly>
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="phone_profile">Celular</label>
-                                    <input class="form-control" id="phone_profile" name="phone_profile" type="number" value="<?php echo $data['TELEFONO'] ?>">
+                                    <input class="form-control" id="phone_profile" name="phone_profile" type="number" value="<?php echo $datos['user_profile']['TELEFONO'] ?>">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="birthday_profile">Cumpleaños</label>
-                                    <input class="form-control" id="birthday_profile" type="date" name="birthday_profile" value="<?php echo $data['BIRTHDAY'] ?>">
+                                    <input class="form-control" id="birthday_profile" type="date" name="birthday_profile" value="<?php echo $datos['user_profile']['BIRTHDAY'] ?>">
                                 </div>
                             </div>
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="documento_profile">Documento</label>
-                                    <input class="form-control" id="documento_profile" name="documento_profile" type="number" value="<?php echo $data['IDENTIFICACION'] ?>">
+                                    <input class="form-control" id="documento_profile" name="documento_profile" type="number" value="<?php echo $datos['user_profile']['IDENTIFICACION'] ?>">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">

@@ -8,6 +8,7 @@ class Principal extends CI_Controller
 		parent::__construct();
 		$this->load->helper('curlconfig');
 		$this->load->model('sedes_model');
+		$this->load->model('categoriaServicios_model');
 		$this->datos = array(
 			'mensaje' => '',
 			'error' => 0,
@@ -18,11 +19,13 @@ class Principal extends CI_Controller
 	public function index()
 	{
 		$reply = $this->sedes_model->findSedes();
+		$servicios = $this->categoriaServicios_model->getCategoriasServicios();
 		// $urlSedes = base_url('index.php/api/sedes/getSedes');
 		// $chSedes = array('url' => $urlSedes, 'methodType' => 'GET', 'datos' => array(''));
 		// $apiSedes = executeCurl($chSedes);
 
 		$frontData['getSedes'] = $reply;
+		$frontData['getServicios'] = $servicios;
 		$result['datos'] = $frontData;
 		$this->load->view('index', $result);
 	}
