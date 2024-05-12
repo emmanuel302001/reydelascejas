@@ -1,7 +1,7 @@
 const pUrl = window.location.origin;
 class completeUrl {
     constructor(_complement) {
-        let url = pUrl + '/reydelascejas/';
+        let url = pUrl + '/';
         let complement = _complement;
         this.getUrl = function () {
             return url + complement;
