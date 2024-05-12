@@ -7,7 +7,7 @@ class Principal extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('curlconfig');
-		$this->load->model('sedes_model');
+		$this->load->model('Sedes_model');
 		$this->load->model('categoriaServicios_model');
 		$this->datos = array(
 			'mensaje' => '',
