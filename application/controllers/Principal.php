@@ -18,7 +18,7 @@ class Principal extends CI_Controller
 
 	public function index()
 	{
-		$reply = $this->sedes_model->findSedes();
+		$reply = $this->Sedes_model->findSedes();
 		$servicios = $this->categoriaServicios_model->getCategoriasServicios();
 		// $urlSedes = base_url('index.php/api/sedes/getSedes');
 		// $chSedes = array('url' => $urlSedes, 'methodType' => 'GET', 'datos' => array(''));
