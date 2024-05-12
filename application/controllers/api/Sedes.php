@@ -11,7 +11,7 @@ class Sedes extends RestController
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Sedes_model');
+    $this->load->model('sedes_model');
     $this->dataResponse = array(
       'message' => '',
       'error' => 0,
