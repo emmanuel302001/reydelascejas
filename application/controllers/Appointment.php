@@ -18,11 +18,10 @@ class Appointment extends CI_Controller
 
     $frontData['getSedes'] = $reply;
     $frontData['getServicios'] = $servicios;
-    $result['datos'] = $frontData;
     if ($this->session->userdata('login')) {
-      $this->load->view('/pages/appoitment', $result);
+      $this->load->view('/pages/appoitment', $frontData);
     } else {
-      $this->load->view('/pages/appoitment', $result);
+      $this->load->view('/pages/appoitment', $frontData);
     }
   }
 }

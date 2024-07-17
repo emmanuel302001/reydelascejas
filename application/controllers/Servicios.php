@@ -22,11 +22,10 @@ class Servicios extends CI_Controller
 
     $page = $this->input->get('p');
     $frontData['servicios'] = $this->servicios_model->getServiciosByCategory($page);
-    $result['datos'] = $frontData;
     if (empty($page)) {
       redirect(site_url("principal"));
     } else {
-      $this->load->view('/pages/servicios/listar', $result);
+      $this->load->view('/pages/servicios/listar', $frontData);
     }
   }
 }

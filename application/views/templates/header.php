@@ -45,8 +45,8 @@
                                 Servicios
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <?php for ($i = 0; $i < count($datos['getServicios']); $i++) { ?>
-                                    <li><a class="dropdown-item" href="<?php echo base_url($datos['getServicios'][$i]['page']); ?>"><?php echo $datos['getServicios'][$i]['nombre']; ?></a></li>
+                                <?php for ($i = 0; $i < count($getServicios); $i++) { ?>
+                                    <li><a class="dropdown-item" href="<?php echo base_url($getServicios[$i]['page']); ?>"><?php echo $getServicios[$i]['nombre']; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </li>

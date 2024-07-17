@@ -20,13 +20,10 @@ class Principal extends CI_Controller
 	{
 		$reply = $this->sedes_model->findSedes();
 		$servicios = $this->categoriaServicios_model->getCategoriasServicios();
-		// $urlSedes = base_url('index.php/api/sedes/getSedes');
-		// $chSedes = array('url' => $urlSedes, 'methodType' => 'GET', 'datos' => array(''));
-		// $apiSedes = executeCurl($chSedes);
+		// var_dump($servicios);
 
 		$frontData['getSedes'] = $reply;
 		$frontData['getServicios'] = $servicios;
-		$result['datos'] = $frontData;
-		$this->load->view('index', $result);
+		$this->load->view('index', $frontData);
 	}
 }
