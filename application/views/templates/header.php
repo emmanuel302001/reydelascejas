@@ -28,7 +28,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow-0">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo base_url('principal') . '#home' ?>"><img src="<?php echo base_url('assets/images/logo1.png') ?>" width="180px"></a>
+                <a class="navbar-brand" href="<?php echo base_url('principal') . '#home' ?>"><img src="<?php echo base_url('assets/images/logocompleto.png') ?>" width="160px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
